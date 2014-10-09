@@ -9,7 +9,7 @@ var applications = require('./public/features/services/server.js');
 
 var app = express();
 
-var mongodbConnectionString = "mongodb://admin:rxRL59JdQYby@127.12.119.2:27017/atest";
+var mongodbConnectionString = "mongodb://admin:rxRL59JdQYby@127.12.119.2:27017/apptest";
 
 // if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
 // 	mongodbConnectionString = "atest";
