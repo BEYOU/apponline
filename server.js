@@ -2,12 +2,13 @@ var express = require('express');
 var mongojs = require('mongojs');
 // var db = mongojs("test", ["serviceClients"]);
 
-app.use(express.static(__dirname + '/public'));
-app.use(express.bodyParser());
 
 var applications = require('./public/features/services/server.js');
 
 var app = express();
+
+app.use(express.static(__dirname + '/public'));
+app.use(express.bodyParser());
 
 var mongodbConnectionString = "mongodb://admin:rxRL59JdQYby@127.12.119.2:27017/apptest";
 
