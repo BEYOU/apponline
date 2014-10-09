@@ -24,7 +24,9 @@
                         <td>
                             <input class="form-control" ng-model="serviceClient.name">
                         </td>
-                        <td><button class="btn btn-success" ng-click="create()">ADD</button></td>
+                            <td><button class="btn btn-success" ng-click="create()">ADD</button>
+                            <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button>
+                        </td>
                     </tr>
                 </thead>
 
@@ -36,7 +38,6 @@
                         <td>
                             <button class="btn btn-danger" ng-click="remove(serviceClient._id)">Remove</button>
                             <button class="btn btn-warning" ng-click="select(serviceClient._id)">Select</button>
-                            <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button>
                         </td>
                     </tr>
                 </tbody>
