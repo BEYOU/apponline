@@ -1,49 +1,158 @@
-<html>
-    <head>
-        <title> The MEAN Stack</title>
-        <link href="css/bootstrap.css" rel="stylesheet" />
-        <script src="js/angular.min.js"></script>
-        <script src="features/services/controller.js"></script>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-    </head>
+<head >
+    <title>My Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <!-- <link href="css/bootstrap.css" rel="stylesheet" /> -->
+    <script src="features/services/controller.js"></script>
+</head>
 
-    <body ng-app="">
-        <div class="container" ng-controller="ServicesCtrl">
-            <h1>Service Client Maker</h1>
-               {{message}}
-
-
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="form-control" ng-model="serviceClient.name">
-                        </td>
-                            <td><button class="btn btn-success" ng-click="create()">ADD</button>
-                            <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button>
-                        </td>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr ng-repeat = "serviceClient in serviceClients">
-                        <td>
-                            {{serviceClient.name}}
-                        </td>
-                        <td>
-                            <button class="btn btn-danger" ng-click="remove(serviceClient._id)">Remove</button>
-                            <button class="btn btn-warning" ng-click="select(serviceClient._id)">Select</button>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
+<body ng-app="">
+    <div class="container">
+        <div id="header">
+            <h1>WEEK 3 - EXPERIMENTS 3: Blog/Comments -- JavaScript</h1>
         </div>
-    </body>
-</html>
+        <br />
+        <bg>
+        <h2>School of Law alumna receives MacArthur Fellowship</h2>
+        <h6>September 26, 2014 by Jason Kornwitz</h6>
+        <br />
+        <div class="row">
+            <div class="col-xs-3">
+                <b>Mary</b> Bonauto, an alumna of North­eastern University’s School of Law 
+                and a pio­neer in the fight for mar­riage equality, has been named to the 2014 Class of 
+                MacArthur Fel­lows. The pres­ti­gious award, which is funded by the John D. and Catherine T. 
+                MacArthur Foun­da­tion, includes a $625,000 “genius grant.”
+            </div>
+            <div class="col-xs-3">
+                <b>The</b> MacArthur Fel­lows Pro­gram aims to stoke the cre­ativity of tal­ented 
+                indi­vid­uals by allowing them the freedom to follow their inno­v­a­tive visions without 
+                stip­u­la­tions or reporting require­ments. More than 900 people with a track record of 
+                high achieve­ment in a diverse range of fields have been selected to receive the award 
+                since the program’s incep­tion in 1981.
+            </div>
+            <div class="col-xs-6">
+                <b>Bonauto</b>, L’87, is the law school’s second grad­uate to receive a 
+                MacArthur Fel­low­ship. The first recip­ient, Marie-​​Therese Con­nolly, L’84, received 
+                the award in 2011 to advance her work to combat elder abuse and mis­treat­ment.
+                <br />
+                <br />
+                <p>
+                    <b>Bonauto</b> has spent the majority of her pro­fes­sional career pro­moting lib­erty and equality for all. 
+                    In par­tic­ular, she has worked to secure mar­riage equality for same-​​sex cou­ples and the legal 
+                    pro­tec­tions mar­riage affords.
+                </p>
+                <a href="http://www.northeastern.edu/news/2014/09/bonautonortheasterngeniusgrant/" target="_blank">Read More...</a>
+            </div>
+        </div></bg>
 
+
+    <div class="container" ng-controller="ServicesCtrl">
+ {{message}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Post a comment </th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control" ng-model="serviceClient.name"></input>
+                        <br />
+                        <button class="btn btn-success" ng-click="create()">ADD</button>
+                        
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr ng-repeat = "serviceClient in serviceClients">
+                    <td>{{serviceClient.name}}
+                        <br />
+                        <br />
+                        <button class="btn btn-danger" ng-click="remove(serviceClient._id)">Remove</button>
+                        <button class="btn btn-warning" ng-click="select(serviceClient._id)">Select</button>
+                        <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button>
+<!--                         <button class="btn btn-danger" ng-click="delete(blog)">Delete</button>
+                        <button class="btn btn-primary" ng-click="save(blog)">Save</button>
+                        <button class="btn btn-warning" ng-click="select(blog)">Edit</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="container">
+    <div class="col-md-11" style="margin-left: 45px;">
+        <h3>Documentation</h3>
+        <p>
+            The purpose of this <i>EXPERIMENT</i> is to make myself master of the basics of AngularJS, Bootstrap we've learnd before
+            and learn more JavaScript basics.
+            <br />
+            <br />
+            What does the EXPERIMENT do -- Post an commet for a given arctile and make it editable and deletable.
+        </p>
+        <pre>
+     Snippets:
+        &lt;script &gt;
+            function BlogController($scope) {
+                $scope.select = function (blog) {
+                    console.log(blog);
+                    $scope.newblog = blog;
+                }
+
+                $scope.delete = function (blog) {
+                    var index = $scope.blogs.indexOf(blog);
+                    $scope.blogs.splice(index, 1);
+                }
+                $scope.add = function () {
+                    console.log($scope.newblog);
+                    var blog = {
+                        content: $scope.newblog.content
+                    };
+                    $scope.blogs.push(blog);
+                    $scope.newblog = '';
+                }
+
+                $scope.save = function () {
+                    console.log($scope.newblog);
+                    var blog = {
+                        content: $scope.newblog.content
+                    };
+                    $scope.add = function () {
+                        console.log($scope.newblog);
+                        var blog = {
+                            content: $scope.newblog = ''
+                        }
+                    };
+                    $scope.newblog = ''
+                }
+            }
+        &lt;script&gt;
+</pre>
+</div>
+
+<footer>
+        <div>
+            <h3>References:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                &nbsp; &nbsp;&nbsp; &nbsp; Sources:</h3>
+            <a href="http://www.w3schools.com" target="_blank">W3School.com</a>&nbsp;
+                &nbsp;   &nbsp; &nbsp; 
+            <a href="http://net4.ccs.neu.edu/home/jga/examples/" target="_blank">Pro. Jose's Examples</a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="../../fileview/Default.aspx?~/experiments/JavaScript/Blog.html" target="_blank">HTML Source</a>
+            &nbsp; &nbsp; &nbsp; 
+            <a href="../../fileview/Default.aspx?~/experiments/JavaScript/css/layout.css" target="_blank">CCS Source</a>
+        </div>
+    <br />
+</footer>
+ </div>
+</body>
+</html>

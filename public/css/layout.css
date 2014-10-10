@@ -1,0 +1,85 @@
+﻿#header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-style: italic;
+}
+
+#nav {
+    line-height: 30px;
+    background-color: #eeeeee;
+    height: 700px;
+    width: 400px;
+    float: right;
+    padding: 5px;
+}
+
+#section {
+    width: 550px;
+    float: left;
+    padding: 10px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    clear: both;
+    padding: 5px;
+}
+
+#aside {
+    width: 550px;
+    float: right;
+    padding: 10px;
+}
+
+
+hhh {
+    background-color: yellow;
+    font-size: 120%;
+}
+
+form {
+    width: 335px;
+    height: auto;
+    color: blue;
+    margin: auto;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+    text-align: center;
+    color: black;
+}
+
+bod {
+    height: auto;
+    margin: auto 12%;
+    float: left;
+    background-color: #f1dba8;
+}
+
+bg {
+    float: left;
+    background-color: #f1dba8;
+}
+
+bg_footer {
+    height: auto;
+    margin: auto 5%;
+    float: left;
+}
+
+
+
+button {
+    margin-right: 10px;
+    float: right;
+}
