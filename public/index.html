@@ -52,7 +52,6 @@
 
 
     <div class="container" ng-controller="ServicesCtrl">
- {{message}}
         <table class="table">
             <thead>
                 <tr>
@@ -61,10 +60,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="form-control" ng-model="serviceClient.name"></input>
+                        <textarea class="form-control" ng-model="serviceClient.name"></textarea>
                         <br />
                         <button class="btn btn-success" ng-click="create()">ADD</button>
-                        
+                        <button class="btn btn-primary" ng-click="update(serviceClient._id)">SAVE</button>
                     </td>
                 </tr>
             </thead>
@@ -73,12 +72,8 @@
                     <td>{{serviceClient.name}}
                         <br />
                         <br />
-                        <button class="btn btn-danger" ng-click="remove(serviceClient._id)">Remove</button>
-                        <button class="btn btn-warning" ng-click="select(serviceClient._id)">Select</button>
-                        <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button>
-<!--                         <button class="btn btn-danger" ng-click="delete(blog)">Delete</button>
-                        <button class="btn btn-primary" ng-click="save(blog)">Save</button>
-                        <button class="btn btn-warning" ng-click="select(blog)">Edit</button> -->
+                        <button class="btn btn-danger" ng-click="remove(serviceClient._id)">CANCLE</button>
+                        <button class="btn btn-warning" ng-click="select(serviceClient._id)">EDIT</button>
                     </td>
                 </tr>
             </tbody>
