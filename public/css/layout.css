@@ -4,6 +4,7 @@
     text-align: center;
     padding: 5px;
     font-style: italic;
+    box-shadow: 10px 10px 5px #888888;
 }
 
 #nav {
@@ -64,10 +65,14 @@ bod {
     margin: auto 12%;
     float: left;
     background-color: #f1dba8;
+
 }
 
 bg {
+    width: 860px;
+    height: auto;
     float: left;
+    padding: 15px;
     background-color: #f1dba8;
 }
 
@@ -81,5 +86,34 @@ bg_footer {
 
 button {
     margin-right: 10px;
+    float: center;
+}
+
+
+#nav {
+    line-height: 30px;
+    background-color: #eeeeee;
+    height: auto;
+    width: 260px;
     float: right;
+    padding: 10px;
+    position: relative;
+}
+
+
+#vertical-line{
+    border-left: 1px solid #808080;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1px;
+}
+
+
+
+#tb {
+    width: 860px;
+    height: auto;
+    float: left;
+    background-color: #f1dba8;
 }

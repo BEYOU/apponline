@@ -5,12 +5,13 @@ function ServicesCtrl($scope, $http) {
 
     $scope.create = function(){
         console.log($scope.serviceClient);
-        $http.post("/serviceClients", $scope.serviceClient)
-        .success(function(response){
-            $scope.all();
+        $http.post("/serviceClients", $scope.serviceClient).success(function(response){
+        	document.getElementById('text').value = "";
+             // $scope.all();
         });
     }
 
+    $scope.collapse = function(){$scope.serviceClients = "";}
 
 
     $scope.renderServiceClients = function(response){
@@ -37,13 +38,18 @@ function ServicesCtrl($scope, $http) {
         $http.put("/serviceClients/" + $scope.serviceClient._id, $scope.serviceClient)
         .success(function (response) {
             $scope.all();
+            document.getElementById('text').value = "";
         });
     };
 //get all
-    $scope.all = function(){
+    $scope.getall = function(){
          $http.get("/serviceClients")
         .success($scope.renderServiceClients);    
     }
     
-    $scope.all();
+     $scope.all = function(){
+         $http.get("/serviceClients")
+        .success($scope.renderServiceClients);    
+    }
+    // $scope.all();
 }
