@@ -12,9 +12,9 @@ app.use(express.bodyParser());
 
 var mongodbConnectionString = "mongodb://admin:rxRL59JdQYby@127.12.119.2:27017/apptest";
 
-// if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
-// 	mongodbConnectionString = "atest";
-// }
+if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
+	mongodbConnectionString = "atest";
+}
 
 var db =mongojs(mongodbConnectionString, ["serviceClients"]);
 
