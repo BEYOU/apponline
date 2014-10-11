@@ -6,8 +6,8 @@ function ServicesCtrl($scope, $http) {
     $scope.create = function(){
         console.log($scope.serviceClient);
         $http.post("/serviceClients", $scope.serviceClient).success(function(response){
-              $scope.all();
-              document.getElementById('text').value = "";
+        	document.getElementById('text').value = "";
+             // $scope.all();
         });
     }
 
@@ -51,5 +51,5 @@ function ServicesCtrl($scope, $http) {
          $http.get("/serviceClients")
         .success($scope.renderServiceClients);    
     }
-     $scope.all();
+    // $scope.all();
 }
